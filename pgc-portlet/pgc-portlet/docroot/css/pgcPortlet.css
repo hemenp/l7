@@ -1,0 +1,611 @@
+.group-list-content {
+    clear: both;
+    color: #757672;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    padding-left: 10px;
+    padding-right: 12px;
+    padding-top: 8px;
+}
+
+.group-list-content p {
+    margin-top: 6px;
+}
+
+.group-list-content td, .group-list-content h3 a {
+    font-size: 11px;
+}
+
+#cntr_contentOneCol {
+    float: left;
+    margin: 0 auto;
+    padding-left: 64px;
+    padding-top: 26px;
+    width: 940px;
+}
+
+.round-corners {width:100%; border:0  none;background-color:#f4f4f4; color:#333;}
+.round-corners .tl {width:16px; height:16px; background:url(/o/pgc-portlet/images/table-corners.png) top left no-repeat;}
+.round-corners .tr {width:16px; height:16px; background:url(/o/pgc-portlet/images/table-corners.png) right top no-repeat;}
+.round-corners .bl {width:16px; height:16px; background:url(/o/pgc-portlet/images/table-corners.png) left bottom no-repeat;}
+.round-corners .br {width:16px; height:16px; background:url(/o/pgc-portlet/images/table-corners.png) right bottom no-repeat;}
+.round-corners td{margin:0; padding:0; background-color:#f4f4f4; vertical-align:middle}
+
+.width50{ width:50px !important}
+.width70{ width:70px !important}
+.width100{ width:100px !important}.width125{ width:125px !important}
+.width150{ width:150px !important}.width180{ width:180px !important}
+.width200{ width:200px !important}	
+.width250{ width:250px !important}
+.width300{ width:300px !important}
+.widthfull{ width:98.5% !important}
+
+.sub-form-heading { padding:5px 0px}
+.margintp {margin-top:10px}
+.marginlft {margin-left:10px}
+.marginbtm {margin-bottom:10px}
+.marginrht {margin-right:10px}
+
+.form-content {padding:6px; padding-bottom:11px;}
+.form-content td{padding:6px; vertical-align:top; width:auto;}
+.form-content input {vertical-align:middle;}
+.form-content input.text-field,
+.form-content .textarea {border:1px solid #bcbcbc; padding:3px;}
+.form-content img {padding-left: 2px;vertical-align:middle;}
+.form-content td.label {width:184px; text-align:left; padding-right:6px; font-size:11px; font-weight:bold; vertical-align:middle}
+.form-content td span.smlgreytxt {
+    color: #BBBBBB;
+    font-size: 11px;
+}
+
+.form-content td.req_label {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    width: 139px;
+}
+
+.form-content .acc-content td.label {width:134px;}
+.form-content .acc-content td.lrg-label {width:337px;}
+.form-content td.align-top{vertical-align:top;}
+.form-content_popup { text-align:left; border: 1px solid #c0c0c0; margin-bottom:10px; width:100%}.form-content_popup tr th, .form-content_popup tr td{padding:5px; border-bottom:1px dotted #c0c0c0}
+.form-content_popup  th { background-color:#F4F4F4; width:25%}
+.form-content_popup  tr.last th, .form-content_popup   tr.last td{border:0 none}
+.form-content td.label_leftalgn{text-align:left}
+.form-content td.nopad { padding:0px !important}
+.form-content td.font12, .font12, .font12 tr td{ font-size: 12px}
+.form-content td.font11, .font11{ font-size: 11px}
+.form-content td.vtop, .vtop{vertical-align:top !important}
+.form-content td.vmid, .vmid{vertical-align: middle !important}
+.form-content td.padtp{padding-top: 10px;}
+.form-content input[type="radio"] {
+    margin-bottom: 3px;
+    margin-right: 3px;
+}
+.form-content tr td.twocallft{width:240px !important; font-weight:bold }
+.form-content tr td.twocalrht{width:400px !important; }
+ 
+.acc-content{display:none}
+
+h3.acc-title{
+	background:url("../images/expand.gif") no-repeat scroll right #E8E8E8;
+	padding:4px;
+	border:1px solid #999;
+	cursor:pointer;
+	margin-bottom:8px;
+	font-size:13px;
+	}
+	
+h3.active{
+	background-image:url("/o/pgc-portlet/images/collapse.gif");
+	}
+
+.request-ul {
+    margin: 0 0 0 10px;
+}
+
+.request-ul li {
+    list-style: decimal outside none;
+    margin-left: 15px;
+    padding: 5px 0;
+}
+
+.red_star {
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ques_label {
+    cursor: pointer;
+    display: inline-block;
+    padding:5px 0px 0 0;
+    position: relative;
+    top: -1px;
+    margin:0 10px 0 10px;
+}
+
+.ques_radio {
+    margin: 0 3px 0 0;
+}
+
+.marginlft {
+    margin-left: 10px;
+}
+
+.margintp {
+    margin-top: 10px;
+}
+
+.bold12 {
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+.sub-form-heading {
+    padding: 5px 0;
+}
+
+.cmmntbxful {
+    height: 50px;
+    width: 98%;
+}
+
+.question {
+	padding-bottom:6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checklist-cont {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    height: 100px;
+    overflow-y: scroll;
+    padding: 0;
+    width: 320px;
+    margin-right:10px;
+}
+
+ul.checklist {
+    margin: 0;
+    padding: 0;
+}
+
+ul.checklist li {
+    background-color: #F4F4F4;
+    list-style: none outside none;
+    margin: 0;
+    padding: 5px 2px 5px 10px;
+}
+
+ul.checklist li span {
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    width: 259px;
+}
+
+ul.checklist li input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+}
+
+ul.checklist li.alt{ 
+	background-color: #fff;
+}
+.ie7 .portlet-borderless-container{
+	position: static;
+}
+
+.form-content input {
+    vertical-align: middle;
+}
+
+.btmbrddiv {
+    border-bottom: 1px solid #CCCCCC;
+    height: 10px;
+}
+
+.fileupload {
+    display: none;
+}
+
+.fileshow .fileupload {
+    display: block;
+}
+
+.margintp {
+    margin-top: 10px;
+}
+
+.request-table td {
+    font-size: 12px;
+}
+
+/* search table result grid */
+
+.taglib-search-iterator {
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+	width:100%;
+}
+
+.taglib-search-iterator td,
+.taglib-search-iterator th {
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
+	padding:6px;
+}
+
+tr.results-header th {
+ /*    background-color: #EAEAEA; */
+    color: #333333;
+    font-weight: bold;
+}
+
+.taglib-search-iterator tr.alt td {
+	background-color:#F9F9F9
+}
+
+/* Pagination */
+
+.taglib-page-iterator {
+		height:25px;
+}
+
+.taglib-page-iterator .search-results {
+/* 	width:240px; */
+	display:block;
+	float:left;
+}
+
+.taglib-page-iterator .search-pages {
+	float:right;
+}
+
+.taglib-page-iterator .search-pages .page-links a, .taglib-page-iterator .search-pages .page-links span {
+	background:url() no-repeat 0 0;
+	border-left:1px solid #ccc;
+	padding:2px 15px;
+}
+
+.taglib-page-iterator .search-pages .page-links {
+	padding:5px 0;
+}
+
+.taglib-page-iterator .search-pages .page-links span {
+	background-position:0 100%;
+}
+
+.taglib-page-iterator .search-pages .page-links a.first, .taglib-page-iterator .search-pages .page-links span.first {
+	background-image:url(/o/pgc-portlet/images/arrows/paging_first.png);
+	background-repeat:no-repeat;
+	border-left:none;
+}
+
+.taglib-page-iterator .search-pages .page-links a.previous, .taglib-page-iterator .search-pages .page-links span.previous {
+	background-image:url(/o/pgc-portlet/images/arrows/paging_previous.png);
+	background-repeat:no-repeat;
+}
+
+.taglib-page-iterator .search-pages .page-links a.next, .taglib-page-iterator .search-pages .page-links span.next {
+	background-image:url(/o/pgc-portlet/images/arrows/paging_next.png);
+	background-repeat:no-repeat;
+}
+
+.taglib-page-iterator .search-pages .page-links a.last, .taglib-page-iterator .search-pages .page-links span.last {
+	background-image:url(/o/pgc-portlet/images/arrows/paging_last.png);
+	background-repeat:no-repeat;
+}
+
+.taglib-page-iterator .search-pages .page-links a.first, .taglib-page-iterator .search-pages .page-links span.first, .taglib-page-iterator .search-pages .page-links a.previous, .taglib-page-iterator .search-pages .page-links span.previous {
+	padding-right:5px;
+}
+
+.taglib-page-iterator .search-pages .page-links a.next, .taglib-page-iterator .search-pages .page-links span.next, .taglib-page-iterator .search-pages .page-links a.last, .taglib-page-iterator .search-pages .page-links span.last {
+	background-position:100% 2px;
+	padding-left:5px;
+}
+
+.taglib-page-iterator .search-pages .page-links span.first, .taglib-page-iterator .search-pages .page-links span.previous {
+	background-position:0 -16px;
+}
+
+.taglib-page-iterator .search-pages .page-links span.next, .taglib-page-iterator .search-pages .page-links span.last {
+	background-position:100% 100%;
+}
+
+.taglib-page-iterator .search-pages .delta-selector, .taglib-page-iterator .search-pages .page-selector, .taglib-page-iterator .search-pages .page-links {
+	float:left;
+	padding-top:0px;
+}
+
+.taglib-page-iterator .search-pages .page-selector {
+	margin-left:10px;
+	margin-right:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#form-header{
+	margin-right: 14px;
+    text-align: right;
+}
+
+#form-header a{
+	font-weight: bold;
+	color: #0000;
+	text-decoration:underline;
+}
+
+.invalidFieldDesc {
+    color: red;
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: -15px;
+}
+
+.validationError{
+	font-weight:bold;
+	color:red;
+}
+
+.width50 {
+    width: 50px !important;
+}
+
+.width200 {
+    width: 200px !important;
+}
+
+.taglib-search-iterator {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+
+#tab-action {
+    float: left;
+    position: relative;
+}
+
+.results-header th {
+    background-color: #EAEAEA;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+	
+.jqmWindow {
+    display: none;
+    
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    
+    margin-left: -300px;
+    width: 600px;
+    
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px; font-size:12px
+}
+/* pop box for form types */
+.jqmOverlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.jqmClose {float: right; font-weight:bold; text-decoration:underline;}
+#titleon {  display: block;  float: left;    width: 90%; line-height:18px}
+
+.taglib-search-iterator td, .taglib-search-iterator th {
+    border: 1px solid #CCCCCC;
+}
+
+#reqsListTable th{
+	background-color: #EAEAEA;
+    color: #333333;
+    font-weight: bold;
+    padding:6px;
+}
+
+.aggreval-block{ border:1px solid #ccc;
+    margin-right: 12px;
+    width: 411px; float:right
+   } 
+.aggreval-block td { font-weight:normal; padding:3px; font-size:11px !important;}
+
+.fright {
+    float: right;
+    margin-right: 6px;
+}
+.fleft {
+    float: left;
+    margin-left: 8px;
+}
+.btmmargin{ margin-bottom:10px}
+.doc-link{cursor:pointer; text-decoration:none}
+
+.costcenterrow, .displayDateRow, .wbsrow, .hcpDateRow, .advisoryDateRow, .csDateRow , .serviceDateRow{
+    height: 50px;
+    margin-left: 5px;
+    width: 130px;
+}
+
+.ie7 .costcenterrow, .ie7 .displayDateRow, .ie7 .wbsrow, .ie7 .hcpDateRow, .ie7 .advisoryDateRow, .ie7 .csDateRow {
+    margin-left: 4px;
+}
+
+input[type="button"].input-button,  input[type="submit"].input-button{
+    background: url("/o/pgc-portlet/images/button-bg.gif") repeat-x scroll 0 -3px transparent;
+    border: 1px solid #ADAEAB;
+    color: #555555;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 6px;
+}
+
+div.results-grid {
+    border: medium none;
+    padding-left: 0px !important;
+}
+
+.check-width {
+    width: 10px;
+}
+
+.dispchecklist-cont {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    height: 100px;
+    overflow-y: scroll;
+    padding: 0;
+    width: 240px;
+    margin-right:10px;
+}
+
+ul.dispchecklist {
+    margin: 0;
+    padding: 0;
+}
+
+ul.dispchecklist li {
+    background-color: #F4F4F4;
+    list-style: none outside none;
+    margin: 0;
+    padding: 5px 2px 5px 10px;
+}
+
+ul.dispchecklist li span {
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    width: 185px;
+}
+
+ul.dispchecklist li input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+}
+
+ul.dispchecklist li.alt{ 
+	background-color: #fff;
+}
+
+#tab-action .lfr-actions {
+   	float: left !important;
+   	text-align: left !important;
+}
+   
+#tab-action .lfr-actions .lfr-trigger{
+	float: left !important;
+}
+   
+#cntr_contentRightTitle{
+	margin-left:10px !important;
+}
+   
+.main_heading {
+	margin-left:10px !important;
+}
+   
+.portlet-msg-success {
+	margin-left:2px !important;
+}
+
+.ie7 .portlet-msg-success {
+	display:inline-block !important;
+}
+
+.results-header th, .results-header td {
+	padding: 7px 4px !important;
+}
+
+.ui-autocomplete-even, .results-row td {
+    padding: 4px !important;
+}
+
+.contentTip{
+    float: left;
+    margin-top: 23px;
+    position: absolute;
+    z-index: 3000;
+    min-width:128px;
+    background-image: url("/o/pgc-portlet/images/input_shadow.png");
+    border: 1px solid #BCBCBC;
+    padding: 3px;
+}
+
+.contentHelp{
+	background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #111111;
+    color: #000000;
+    float: left;
+    margin-top: 23px;
+    padding: 2px;
+    position: absolute;
+    z-index: 3000;
+    min-width:128px;
+}
+
+h3.search-title {
+    background: url("/o/pgc-portlet/images/collapse.gif") no-repeat scroll right center #F4F4F4;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 4px;
+    margin-bottom:0px;
+}
+h3.create-title {
+    background: #F4F4F4;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 4px;
+    margin-bottom:0px;
+}
+h3.inactive {
+	 background: url("/o/pgc-portlet/images/expand.gif") no-repeat scroll right center #F4F4F4;
+}
+.feeTextField{
+	width:105px;
+}
+
+
+
+
+#RequestorInfoBlk td.req_label{width:160px;}
+
+#DispExhibitBlk td.req_label{width:189px !important;}
+
+.MultiFile-list, .MultiFile-applied {margin-bottom: 10px;}
+
+
+#ServiceAgreementBlk .req_label {width: 40%;}
+#ServiceAgreementBlk .form-item {width: 60%;}
+
+.form-content td.req_lable_area {
+    width: 160px;
+}

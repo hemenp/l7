@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.dsi.intranet.eprocurement.service.impl.EprocurementLocationLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.EprocurementLocationLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.EprocurementLocationPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.EprocurementLocationPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.EprocurementRequestLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.EprocurementRequestLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.EprocurementRequestServiceImpl" id="com.dsi.intranet.eprocurement.service.EprocurementRequestService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.EprocurementRequestPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.EprocurementRequestPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.ItemLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.ItemLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.ItemPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.ItemPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.RequestAttachmentLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.RequestAttachmentLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.RequestAttachmentPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.RequestAttachmentPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.WorkflowDefinitionLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.WorkflowDefinitionLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.WorkflowDefinitionPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.WorkflowDefinitionPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.WorkflowRequestLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.WorkflowRequestLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.WorkflowRequestPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.WorkflowRequestPersistence" parent="basePersistence" />
+	<bean class="com.dsi.intranet.eprocurement.service.impl.WorkflowReviewLocalServiceImpl" id="com.dsi.intranet.eprocurement.service.WorkflowReviewLocalService" />
+	<bean class="com.dsi.intranet.eprocurement.service.persistence.impl.WorkflowReviewPersistenceImpl" id="com.dsi.intranet.eprocurement.service.persistence.WorkflowReviewPersistence" parent="basePersistence" />
+</beans>

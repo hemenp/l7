@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="docroot/WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="com.liferay.ide.sdk.container">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=pgc-portlet&amp;ivyXmlPath=ivy.xml&amp;confs=*&amp;ivySettingsPath=%24%7Bliferay_sdk_dir%3Apgc-portlet%7D%2Fivy-settings.xml&amp;loadSettingsOnDemand=false&amp;ivyUserDir=%24%7Bliferay_sdk_dir%3Apgc-portlet%7D%2F.ivy&amp;propertyFiles=">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-io-2.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-lang3.3.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/documentum-service.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/httpclient-4.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/httpmime-4.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jaxen-1.1.3.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jstl-api.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jstl-impl.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-aop.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-beans.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-context.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-core.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-expression.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-web.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-webmvc-portlet.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/util-bridges.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/util-java.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/util-taglib.jar"/>
+	<classpathentry kind="output" path="docroot/WEB-INF/classes"/>
+</classpath>

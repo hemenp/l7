@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_Eprocurement_EprocurementRequestService" provider="java:RPC" style="rpc" use="encoded">
+		<typeMapping xmlns:ns="http://model.eprocurement.intranet.dsi.com" qname="ns:EprocurementRequestSoap" type="java:com.dsi.intranet.eprocurement.model.EprocurementRequestSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://xml.intranet.dsi.com" qname="ns:EProcurementProcessInfo" type="java:com.dsi.intranet.xml.EProcurementProcessInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.eprocurement.intranet.dsi.com" xmlns:rtns="http://model.eprocurement.intranet.dsi.com" name="approveDeclineRequest" qname="operNS:approveDeclineRequest" returnQName="approveDeclineRequestReturn" returnType="rtns:EprocurementRequestSoap" soapAction="">
+			<parameter xmlns:tns="http://xml.intranet.dsi.com" qname="eprocurementInfo" type="tns:EProcurementProcessInfo"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eprocurement.intranet.dsi.com" xmlns:rtns="http://model.eprocurement.intranet.dsi.com" name="getEProcurementRequest" qname="operNS:getEProcurementRequest" returnQName="getEProcurementRequestReturn" returnType="rtns:EprocurementRequestSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="eProcRequestId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eprocurement.intranet.dsi.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sayHello" qname="operNS:sayHello" returnQName="sayHelloReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eprocurement.intranet.dsi.com" name="sendNotificationByInitialApprover" qname="operNS:sendNotificationByInitialApprover" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="requestId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="viewRequestUrl" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.eprocurement.intranet.dsi.com" xmlns:rtns="http://model.eprocurement.intranet.dsi.com" name="updateEProcurementRequest" qname="operNS:updateEProcurementRequest" returnQName="updateEProcurementRequestReturn" returnType="rtns:EprocurementRequestSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="eProcRequestId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="status" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="reason" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="approveDeclineRequest getEProcurementRequest sayHello sendNotificationByInitialApprover updateEProcurementRequest" />
+		<parameter name="className" value="com.dsi.intranet.eprocurement.service.http.EprocurementRequestServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.eprocurement.intranet.dsi.com,http://xml.intranet.dsi.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EprocurementRequestServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EprocurementRequestServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Eprocurement_EprocurementRequestService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.eprocurement.intranet.dsi.com" />
+	</service>
+</deployment>

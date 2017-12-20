@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.dsi.intranet.eprocurement">
+	<author>CIGNEX Technologies</author>
+	<namespace>Eprocurement</namespace>
+	
+	<entity name="EprocurementRequest" table="eproc_request" local-service="true" remote-service="true">
+			<!-- PK fields -->
+		<column name="requestId" type="long" primary="true" />				
+		<column name="shipToOther" type="String" />
+		<column name="spendDepartment" type="String" />
+		<column name="spendYear" type="String" />
+		<column name="address" type="String" />
+		<column name="city" type="String" />
+		<column name="state" type="String" />
+		<column name="zip" type="String" />
+		<column name="isBudgetedRequest" type="String" />
+		<column name="isRelatedtoProject" type="String" />
+		<column name="projectName" type="String" />		
+		<column name="projectOwnerId" type="long" /> <!-- userId from user table --> 
+		<column name="totalCost" type="double" />
+		<column name="originalCost" type="double" />
+		<column name="reason" type="String" />
+		<column name="notes" type="String" />
+		<column name="vendorCode" type="String" /><!-- accountNumber from sap_vendor table -->
+		<column name="vendorEmail" type="String" />
+		<column name="contractId" type="String" />		
+		<column name="purchaseOrder" type="String" />
+						
+		<column name="itemInStock" type="boolean" />
+		<column name="recievedDate" type="Date" />
+		<column name="returnedDate" type="Date" />
+		<column name="assetInfo" type="String" />
+		<column name="returnedAssets" type="String" /> <!-- userId from user table -->		
+		
+			<!-- Audit Fields -->
+		<column name="createdBy" type="long" /> <!-- userId from user table -->
+		<column name="createdDate" type="Date" />
+		<column name="modifiedBy" type="long" /> <!-- userId from user table -->
+		<column name="modifiedDate" type="Date" />	
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+			<!-- Work-flow related fields -->		
+		<column name="requestorId" type="long"/> <!-- userId from user table -->	
+		<column name="supervisorId" type="long" /> <!-- userId from user table -->
+		<column name="status" type="String" />
+		<column name="stage" type="String" /> <!-- stage is considered as "updatorUserId" -->
+		<column name="nextStage" type="String" /> <!-- nextStage is considered as "nextUpdatorUserId" or "nextApproverId" in WF -->
+		<column name="isApproverRole" type="String" /> <!-- when "isApproverRole"="yes", "nextStage" will have roleId rather than userId -->
+		
+			<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate"></order-column>
+			<order-column name="createdDate"></order-column>
+		</order>
+
+			<!-- Finder methods -->
+		<finder name="ModifiedDate" return-type="Collection">
+			<finder-column name="modifiedDate" />
+		</finder>		
+		<finder name="RequestorName" return-type="Collection">
+			<finder-column name="requestorId" />
+		</finder>
+	
+		<finder name="eprocurementrequest" return-type="EprocurementRequest">
+			<finder-column name="modifiedDate" />
+			<finder-column name="requestorId" />
+		</finder>
+		<finder return-type="Collection" name="Status">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="StatusAddress">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="status"></finder-column>
+			<finder-column name="city"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="Item" table="eproc_item" local-service ="true" remote-service="false">	
+			<!-- PK fields -->
+		<column name="itemId" type="long" primary="true" />
+
+		<column name="itemName" type="String" />
+		<column name="itemDescription" type="String" />
+		<column name="quantity" type="long" />
+		<column name="cost" type="double" />
+		<column name="originalCost" type="double" />
+		<column name="wbselement" type="String" />
+		<column name="glAccNo" type="String" />
+		<column name="costCenter" type="String" />
+		<column name="requestId" type="long" />
+		
+		<!-- Following fields are same as Request table -->
+		<column name="itemInStock" type="boolean" />
+		<column name="vendorCode" type="String" /><!-- accountNumber from sap_vendor table -->
+		<column name="purchaseOrder" type="String" />
+		<column name="recievedDate" type="Date" />
+		<column name="returnedDate" type="Date" />
+		<column name="assetInfo" type="String" />
+		<column name="returnedAssets" type="String" />
+		
+			<!-- Audit Fields -->
+		<column name="createdBy" type="long" /> <!-- userId from user table -->
+		<column name="createdDate" type="Date" />
+		<column name="modifiedBy" type="long" /> <!-- userId from user table -->
+		<column name="modifiedDate" type="Date" />	
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="item" return-type="Item">
+			<finder-column name="requestId" />			
+		</finder>
+		<finder name="items" return-type="Collection">		
+			<finder-column name="requestId" />			
+		</finder>
+	</entity>
+	<!-- Request Attachment information -->
+	<entity name="RequestAttachment" table="eproc_request_attachment" local-service ="true" remote-service="false">
+		<column name="requestAttachmentId" type="long" primary="true"></column>
+		<column name="requestId" type="long"></column> <!-- request Id from Request table -->
+		<column name="fileEntryId" type="long"></column><!-- file entryId from DLFFileEntry -->
+	<!-- finder methods -->
+		<finder return-type="Collection" name="GetRequestAttachments">
+			<finder-column name="requestId"></finder-column>
+		</finder>
+		<finder return-type="RequestAttachment" name="GetRequestAttachmentByFileEntryId">
+			<finder-column name="fileEntryId"></finder-column>
+		</finder>
+			<finder name="fileEntryId" return-type="Collection">
+				<finder-column name="requestId" />
+			</finder>
+			
+		
+	</entity>
+	<entity name="WorkflowDefinition" table="eproc_workflow_definition" local-service ="true" remote-service="false">	
+			<!-- PK fields -->
+		<column name="workflowDefinitionId" type="long" primary="true" />
+
+		<column name="workflowName" type="String" />
+		<column name="stages" type="String" />
+		<column name="isActive" type="boolean" />
+	
+			<!-- Audit Fields -->
+		<column name="createdBy" type="long" /> <!-- userId from user table -->
+		<column name="createdDate" type="Date" />
+		<column name="modifiedBy" type="long" /> <!-- userId from user table -->
+		<column name="modifiedDate" type="Date" />	
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder return-type="Collection" name="GetActiveWorkflowDefinitions">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="isActive"></finder-column>
+		</finder>
+		<finder return-type="WorkflowDefinition" name="GetWorkflowDefinition">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="workflowName"></finder-column>
+		</finder>
+	</entity>
+	
+	<!-- "workflow_proposal" is renamed to "workflow_request" for the sake of simplicity -->
+	<entity name="WorkflowRequest" table="eproc_workflow_request" local-service ="true" remote-service="false">	
+			<!-- PK fields -->
+		<column name="workflowRequestId" type="long" primary="true" />
+
+		<column name="workflowDefinitionId" type="long" /> 
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="isActive" type="boolean" />
+		
+			<!-- Audit Fields -->
+		<column name="createdBy" type="long" /> <!-- userId from user table -->
+		<column name="createdDate" type="Date" />
+		<column name="modifiedBy" type="long" /> <!-- userId from user table -->
+		<column name="modifiedDate" type="Date" />	
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder return-type="WorkflowRequest" name="ClassPK">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameId"></finder-column>
+			<finder-column name="classPK"></finder-column>
+			<finder-column name="isActive"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="workflowDefinitionId">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="workflowDefinitionId"></finder-column>
+			<finder-column name="isActive"></finder-column>
+		</finder>	
+	</entity>
+	
+	<entity name="WorkflowReview" table="eproc_workflow_review" local-service ="true" remote-service="false">	
+			<!-- PK fields -->
+		<column name="workflowReviewId" type="long" primary="true" />
+
+		<column name="workflowRequestId" type="long" />
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		
+			<!-- Work-flow related fields -->		
+		<column name="updatedBy" type="long"/> 	 <!-- same as "stage" in "request" -->	
+		<column name="updatedToStatus" type="String" />	<!-- same as "status" in "request" -->
+		<column name="nextStage" type="String" />
+		<column name="isApproverRole" type="String" />
+		<column name="updatedDate" type="Date" />	
+		<column name="approverComments" type="String" />
+		<column name="emailComments" type="String" />
+		
+			<!-- Audit Fields -->	
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder return-type="Collection" name="ClassNameAndClassPK">
+			<finder-column name="companyId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="classNameId"></finder-column>
+			<finder-column name="classPK"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="EprocurementLocation" table="eproc_location" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="locationId" type="String" primary="true" />
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long" />
+		<column name="location" type="String"/>
+		<column name="flowType" type="String"/>
+		<column name="locationType" type="String" />
+		<column name="address" type="String" />
+		<column name="personnelArea" type="String" />
+		<column name="personnelSubArea" type="String" />
+		<column name="buildingNumber" type="String" />
+		<column name="appName" type="String" />
+	</entity>
+	
+</service-builder>

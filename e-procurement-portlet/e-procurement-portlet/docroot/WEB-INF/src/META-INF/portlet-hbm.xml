@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.dsi.intranet.eprocurement.model.EprocurementLocation" />
+	<import class="com.dsi.intranet.eprocurement.model.EprocurementRequest" />
+	<import class="com.dsi.intranet.eprocurement.model.Item" />
+	<import class="com.dsi.intranet.eprocurement.model.RequestAttachment" />
+	<import class="com.dsi.intranet.eprocurement.model.WorkflowDefinition" />
+	<import class="com.dsi.intranet.eprocurement.model.WorkflowRequest" />
+	<import class="com.dsi.intranet.eprocurement.model.WorkflowReview" />
+	<class name="com.dsi.intranet.eprocurement.model.impl.EprocurementLocationImpl" table="eproc_location">
+		<id name="locationId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="location" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="flowType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="locationType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="personnelArea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="personnelSubArea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="buildingNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="appName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.EprocurementRequestImpl" table="eproc_request">
+		<id name="requestId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="shipToOther" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spendDepartment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spendYear" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="state_" name="state" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="zip" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isBudgetedRequest" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isRelatedtoProject" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectOwnerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="totalCost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="originalCost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="reason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="vendorCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="vendorEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contractId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="purchaseOrder" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="itemInStock" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="recievedDate" type="org.hibernate.type.TimestampType" />
+		<property name="returnedDate" type="org.hibernate.type.TimestampType" />
+		<property name="assetInfo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="returnedAssets" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createdBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="requestorId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="supervisorId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="stage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nextStage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isApproverRole" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.ItemImpl" table="eproc_item">
+		<id name="itemId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="itemName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="itemDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="quantity" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="originalCost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="wbselement" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="glAccNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="costCenter" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="requestId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="itemInStock" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="vendorCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="purchaseOrder" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="recievedDate" type="org.hibernate.type.TimestampType" />
+		<property name="returnedDate" type="org.hibernate.type.TimestampType" />
+		<property name="assetInfo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="returnedAssets" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createdBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.RequestAttachmentImpl" table="eproc_request_attachment">
+		<id name="requestAttachmentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="requestId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="fileEntryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.WorkflowDefinitionImpl" table="eproc_workflow_definition">
+		<id name="workflowDefinitionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="workflowName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="stages" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.WorkflowRequestImpl" table="eproc_workflow_request">
+		<id name="workflowRequestId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="workflowDefinitionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.dsi.intranet.eprocurement.model.impl.WorkflowReviewImpl" table="eproc_workflow_review">
+		<id name="workflowReviewId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="workflowRequestId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="updatedBy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="updatedToStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nextStage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isApproverRole" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="updatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="approverComments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="emailComments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

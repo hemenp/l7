@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 7.0.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_7_0_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>request-dashboard</portlet-name>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/edir_style.css</header-portlet-css>
+		<header-portlet-css>/css/reset.css</header-portlet-css>
+		<header-portlet-css>/css/news.css</header-portlet-css>
+		<header-portlet-css>/css/form-page.css</header-portlet-css>
+	</portlet>
+	<portlet>
+		<portlet-name>purchase-request</portlet-name>
+		<!-- <indexer-class>com.dsi.intranet.eprocurement.portlet.util.EprocurementIndexer</indexer-class> -->
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/edir_style.css</header-portlet-css>
+	</portlet>
+	<portlet>
+		<portlet-name>workflow</portlet-name>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/edir_style.css</header-portlet-css>
+		<header-portlet-javascript>/js/workflow-validation.js</header-portlet-javascript>
+	</portlet>
+	<portlet>
+		<portlet-name>reports</portlet-name>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/edir_style.css</header-portlet-css>
+		<header-portlet-css>/css/reset.css</header-portlet-css>
+		<header-portlet-css>/css/news.css</header-portlet-css>
+		<header-portlet-css>/css/form-page.css</header-portlet-css>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

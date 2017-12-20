@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.dsi.intranet.eprocurement.model.EprocurementLocation">
+		<field name="locationId" type="String" />
+		<field name="companyId" type="long" />
+		<field name="location" type="String" />
+		<field name="flowType" type="String" />
+		<field name="locationType" type="String" />
+		<field name="address" type="String" />
+		<field name="personnelArea" type="String" />
+		<field name="personnelSubArea" type="String" />
+		<field name="buildingNumber" type="String" />
+		<field name="appName" type="String" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.EprocurementRequest">
+		<field name="requestId" type="long" />
+		<field name="shipToOther" type="String" />
+		<field name="spendDepartment" type="String" />
+		<field name="spendYear" type="String" />
+		<field name="address" type="String" />
+		<field name="city" type="String" />
+		<field name="state" type="String" />
+		<field name="zip" type="String" />
+		<field name="isBudgetedRequest" type="String" />
+		<field name="isRelatedtoProject" type="String" />
+		<field name="projectName" type="String" />
+		<field name="projectOwnerId" type="long" />
+		<field name="totalCost" type="double" />
+		<field name="originalCost" type="double" />
+		<field name="reason" type="String" />
+		<field name="notes" type="String" />
+		<field name="vendorCode" type="String" />
+		<field name="vendorEmail" type="String" />
+		<field name="contractId" type="String" />
+		<field name="purchaseOrder" type="String" />
+		<field name="itemInStock" type="boolean" />
+		<field name="recievedDate" type="Date" />
+		<field name="returnedDate" type="Date" />
+		<field name="assetInfo" type="String" />
+		<field name="returnedAssets" type="String" />
+		<field name="createdBy" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedBy" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="requestorId" type="long" />
+		<field name="supervisorId" type="long" />
+		<field name="status" type="String" />
+		<field name="stage" type="String" />
+		<field name="nextStage" type="String" />
+		<field name="isApproverRole" type="String" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.Item">
+		<field name="itemId" type="long" />
+		<field name="itemName" type="String" />
+		<field name="itemDescription" type="String" />
+		<field name="quantity" type="long" />
+		<field name="cost" type="double" />
+		<field name="originalCost" type="double" />
+		<field name="wbselement" type="String" />
+		<field name="glAccNo" type="String" />
+		<field name="costCenter" type="String" />
+		<field name="requestId" type="long" />
+		<field name="itemInStock" type="boolean" />
+		<field name="vendorCode" type="String" />
+		<field name="purchaseOrder" type="String" />
+		<field name="recievedDate" type="Date" />
+		<field name="returnedDate" type="Date" />
+		<field name="assetInfo" type="String" />
+		<field name="returnedAssets" type="String" />
+		<field name="createdBy" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedBy" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.RequestAttachment">
+		<field name="requestAttachmentId" type="long" />
+		<field name="requestId" type="long" />
+		<field name="fileEntryId" type="long" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.WorkflowDefinition">
+		<field name="workflowDefinitionId" type="long" />
+		<field name="workflowName" type="String" />
+		<field name="stages" type="String" />
+		<field name="isActive" type="boolean" />
+		<field name="createdBy" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedBy" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.WorkflowRequest">
+		<field name="workflowRequestId" type="long" />
+		<field name="workflowDefinitionId" type="long" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="isActive" type="boolean" />
+		<field name="createdBy" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedBy" type="long" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.dsi.intranet.eprocurement.model.WorkflowReview">
+		<field name="workflowReviewId" type="long" />
+		<field name="workflowRequestId" type="long" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="updatedBy" type="long" />
+		<field name="updatedToStatus" type="String" />
+		<field name="nextStage" type="String" />
+		<field name="isApproverRole" type="String" />
+		<field name="updatedDate" type="Date" />
+		<field name="approverComments" type="String" />
+		<field name="emailComments" type="String" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

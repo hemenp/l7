@@ -1,0 +1,39 @@
+body {
+	background: white;
+	font-size: 11pt;
+}
+#cntr_content_left, #ctnr_searchBox, #ctnr_menu, .left_10green{ display:none;}
+#cntr_contentRight{ border:0px solid #ff0000; width:auto} div{ border:0px solid #ccc; margin:0px}
+#cntr_contentRight, .group-list-content{margin-left:0%;  border:0px solid #ff0000; padding:0px }
+#ctnr_main, #cntr_contentTwoCol, #cntr_contentRight{margin-left:0%;  border:0px solid #ff0000; padding:0px; width:auto}
+
+.round-corners{ width:90%}
+
+input[type=button] {display:none}
+ 
+.navigation_portlet_background, #column-1, #ctnr_banner, #banner, #form-header{border:1px solid #ff0000;}
+
+#content-wrapper{ padding:0px}
+
+ #cntr_content{ width:98% !important}
+#wrapper{ width:100% !important}
+.lfr-grid{ width:100% !important}
+
+.checklist-cont {
+	height:170px;	
+}
+
+.dispchecklist-cont {
+	height:210px;	
+}
+
+#footer_div {
+    display: none;
+}
+
+.round-corners, .group-list-content, #cntr_contentOneCol {
+	WIDTH: 100% !important; 
+}
+#cntr_contentOneCol, .portlet-content-container, #portlet-wrapper-pgc_WAR_pgcportlet, #column-2 {
+	WIDTH: 100% !important;  
+}
